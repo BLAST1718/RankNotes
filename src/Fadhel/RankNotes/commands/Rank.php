@@ -69,7 +69,7 @@ class Rank extends Command
         $item = Item::get(Item::PAPER, 0, $amount);
         $item->addEnchantment(new EnchantmentInstance(new Enchantment(255, "", Enchantment::RARITY_COMMON, Enchantment::SLOT_ALL, Enchantment::SLOT_NONE, 1)));
         $item->setNamedTagEntry(new StringTag("rank", $rank));
-        $player->getInventory()->addItem($item->setCustomName(TextFormat::RESET . TextFormat::RED . $rank . TextFormat::GOLD . " Rank")->setLore([TextFormat::RESET . TextFormat::GOLD . "Right-click to redeem the " . TextFormat::RED . $rank . TextFormat::GOLD . " rank.\n\nRank Notes: this plugin was coded by Fadhel.\nSubscribe at " . TextFormat::RED . "https://youtube.com/c/FadhelFS"]));
+        $player->getInventory()->addItem($item->setCustomName(TextFormat::RESET . TextFormat::RED . $rank . TextFormat::GOLD . " Rank")->setLore([TextFormat::RESET . TextFormat::GOLD . "Right-click to redeem the " . TextFormat::RED . $rank . TextFormat::GOLD . " rank"]));
         $sender->sendMessage(TextFormat::GOLD . "Successfully gave " . TextFormat::RED . $player->getName() . TextFormat::GOLD . " x" . $amount . TextFormat::RED . " " . $rank . TextFormat::GOLD . " rank note(s).");
         $sender->sendMessage(TextFormat::GOLD . "You've received" . TextFormat::RED . TextFormat::GOLD . " x" . $amount . TextFormat::RED . " " . $rank . TextFormat::GOLD . " rank note(s).");
     }
