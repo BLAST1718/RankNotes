@@ -6,4 +6,4 @@ author: Fadhel
 website: youtube.com/c/FadhelFS
 permissions:
   ranknotes.command:
-    default: false
+    default: op
