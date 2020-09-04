@@ -21,16 +21,12 @@ class Rank extends Command
     public function __construct(Main $plugin)
     {
         $this->plugin = $plugin;
-        //$this->setPermission("ranknotes.command");
         parent::__construct("ranknotes", "Rank Notes", "/ranknotes <player> <rank> <amount>", ["rn"]);
     }
 
-    public function execute(CommandSender $sender, string $commandLabel, array $args)
+    public function execute(CommandSender $sender, string $commandLabel, array $args): void
     {
-        /*if(!$this->testPermission($sender)){
-            return;
-        }*/
-        if($sender instanceof Player and !$sender->hasPermission("ranknotes.command")){
+        if(!$sender->hasPermission("ranknotes.command")){
             $sender->sendMessage(TextFormat::RED . "You do not have permission to use this command.");
             return;
         }
